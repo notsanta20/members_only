@@ -1,4 +1,6 @@
 const { body, validationResult } = require("express-validator");
+const pool = require(`../db/pool`);
+const passwordFunc = require(`../config/password`);
 
 const validate = [
   body(`fullname`, `Fullname not be empty`).not().isEmpty(),
@@ -24,6 +26,10 @@ const register = [
       return res.status(400).render(`register`, { error: errors.array() });
     }
     const { fullname, username, password } = req.body;
+    const { salt, hash } = passwordFunc.generatePass(password);
+    // await pool.query(
+    //   `INSERT INTO usernames (fullname,username,hash,salt,admin ) VALUES ('${fullname}', '${username}', '${hash}', '${salt}', '${admin}')`
+    // );
     res.redirect(`/`);
   },
 ];

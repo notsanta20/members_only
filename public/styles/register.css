@@ -13,3 +13,11 @@
   list-style: none;
   color: rgb(209, 48, 48);
 }
+
+.normal {
+  outline: none;
+}
+
+.red {
+  outline: 1px red solid;
+}

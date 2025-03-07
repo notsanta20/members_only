@@ -10,7 +10,7 @@ const error = require(`../controllers/error`);
 
 router.get(`/`, home);
 router.get(`/log-in`, loginForm);
-router.post(`/log-in`, loginForm);
+router.post(`/log-in`, passport.authenticate, loginForm);
 router.get(`/register`, registerForm);
 router.post(`/register`, register);
 

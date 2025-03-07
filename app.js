@@ -24,6 +24,7 @@ app.use(
   })
 );
 
+app.use(passport.session());
 app.use(router);
 
 app.listen(

@@ -12,7 +12,7 @@
       <%- include(`partials/header.ejs`)%>
       <div class="dynamic-content">
         <h2>Register</h2>
-        <div class="errors"><%- include(`partials/formError.ejs`)%></div>
+        <%- include(`partials/formError.ejs`)%>
         <form action="/register" method="post" class="login-register">
           <div>
             <label for="fullname">Full Name</label>
