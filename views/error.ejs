@@ -8,7 +8,7 @@
   </head>
   <body>
     <div class="main-container">
-      <%- include(`partials/header.ejs`)%>
+      <%- include(`partials/header.ejs`, {auth: auth, admin: admin})%>
       <div class="dynamic-content">
         <h2>Error 404 Page not found ;(</h2>
       </div>

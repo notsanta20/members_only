@@ -9,7 +9,7 @@
   </head>
   <body>
     <div class="main-container">
-      <%- include(`partials/header.ejs`)%>
+      <%- include(`partials/header.ejs`, {auth: auth, admin: admin})%>
       <div class="dynamic-content">
         <h2>Login</h2>
         <form action="/log-in" method="post" class="login-register">

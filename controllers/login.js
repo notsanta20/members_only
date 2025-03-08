@@ -1,5 +1,5 @@
 function login(req, res, next) {
-  res.render(`index`);
+  res.redirect(`/`);
 }
 
 module.exports = login;

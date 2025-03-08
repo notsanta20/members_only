@@ -1,5 +1,8 @@
 function error(req, res) {
-  res.render(`error`);
+  const auth = req.isAuthenticated();
+  const admin = "user" in req ? req.user.admin : false;
+
+  res.render(`error`, { auth: auth, admin: admin });
 }
 
 module.exports = error;

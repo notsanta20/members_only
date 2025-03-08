@@ -9,9 +9,12 @@
   </head>
   <body>
     <div class="main-container">
-      <%- include(`partials/header.ejs`)%>
+      <%- include(`partials/header.ejs`, {auth: auth, admin: admin})%>
       <div class="dynamic-content">
-        <h2>Register</h2>
+        <div>
+          <h2>Register</h2>
+          <p>( Admin rights will be randomly assigned )</p>
+        </div>
         <%- include(`partials/formError.ejs`)%>
         <form action="/register" method="post" class="login-register">
           <div>

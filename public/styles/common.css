@@ -85,7 +85,11 @@ form button:hover {
   font-weight: 300;
   font-size: 1.5rem;
   text-align: center;
-  padding: 30px;
+  padding: 10px;
+}
+
+.dynamic-content > div p {
+  font-style: italic;
 }
 
 .login-register {
@@ -98,4 +102,15 @@ form button:hover {
   display: flex;
   flex-direction: column;
   gap: 5px;
+}
+
+.admin {
+  color: rgb(219, 36, 36);
+  font-weight: 500;
+}
+
+.admin-txt {
+  color: rgb(219, 36, 36);
+  font-family: "Newsreader";
+  font-weight: 500;
 }

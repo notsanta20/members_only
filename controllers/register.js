@@ -3,16 +3,14 @@ const pool = require(`../db/pool`);
 const passwordFunc = require(`../config/password`);
 
 const validate = [
-  body(`fullname`, `Fullname not be empty`).not().isEmpty(),
+  body(`fullname`, `Fullname should not be empty`).not().isEmpty(),
   body(`fullname`, `Fullname should contain only alphabets`).trim().isAlpha(),
   body(`username`, `Username should not be empty`).not().isEmpty(),
-  body(`username`, `username should contain only alphabets`).trim().isAlpha(),
-  body(`username`, `username should be between 1-10 characters`).isLength({
+  body(`username`, `username should be between 3-10 characters`).isLength({
     min: 3,
     max: 10,
   }),
   body(`password`, `Password should not be empty`).not().isEmpty(),
-  body(`password`, `Password should contain only alphabets`).trim().isAlpha(),
   body(`password`, `Password should be at least 8 characters`).isLength({
     min: 8,
   }),
@@ -27,9 +25,11 @@ const register = [
     }
     const { fullname, username, password } = req.body;
     const { salt, hash } = passwordFunc.generatePass(password);
-    // await pool.query(
-    //   `INSERT INTO usernames (fullname,username,hash,salt,admin ) VALUES ('${fullname}', '${username}', '${hash}', '${salt}', '${admin}')`
-    // );
+    const randomNum = Math.floor(Math.random() * 10);
+    const admin = randomNum > 6 ? true : false;
+    await pool.query(
+      `INSERT INTO users (fullname,username,hash,salt,admin ) VALUES ('${fullname}', '${username}', '${hash}', '${salt}', '${admin}')`
+    );
     res.redirect(`/`);
   },
 ];
