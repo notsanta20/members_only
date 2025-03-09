@@ -11,10 +11,13 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  background-color: rgb(17, 17, 17);
   color: white;
   font-family: "Inter";
   font-weight: 300;
+}
+
+body {
+  background-color: rgb(17, 17, 17);
 }
 
 .main-container {

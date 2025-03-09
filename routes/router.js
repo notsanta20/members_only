@@ -8,6 +8,9 @@ const register = require(`../controllers/register`);
 const membersOnly = require(`../controllers/membersOnly`);
 const logout = require(`../controllers/logout`);
 const admin = require(`../controllers/admin`);
+const addMessageForm = require(`../controllers/addMessageForm`);
+const addMessage = require(`../controllers/addMessage`);
+const deletePost = require(`../controllers/deletePost`);
 const error = require(`../controllers/error`);
 
 router.get(`/`, home);
@@ -24,6 +27,9 @@ router.post(`/register`, register);
 router.get(`/members-only`, membersOnly);
 router.get(`/logout`, logout);
 router.get(`/admin`, admin);
+router.get(`/addMessage`, addMessageForm);
+router.post(`/addMessage`, addMessage);
+router.get(`/delete/:id`, deletePost);
 
 router.get(`*`, error);
 module.exports = router;

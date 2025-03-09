@@ -12,7 +12,14 @@
       <%- include(`partials/header.ejs`, {auth: auth, admin: admin})%>
       <div class="posts">
         <h2>Recent Posts</h2>
-        <div>Posts</div>
+        <ul>
+          <%posts.forEach(p=>{%>
+          <li class="card">
+            <div><%= p.title%></div>
+            <div><%= p.message%></div>
+          </li>
+          <%})%>
+        </ul>
       </div>
       <%- include(`partials/footer.ejs`)%>
     </div>
