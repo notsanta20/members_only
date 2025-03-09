@@ -19,9 +19,17 @@ const validate = [
 const register = [
   validate,
   async (req, res, next) => {
+    const auth = req.isAuthenticated();
+    const adminCheck = "user" in req ? req.user.admin : false;
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      return res.status(400).render(`register`, { error: errors.array() });
+      return res
+        .status(400)
+        .render(`register`, {
+          error: errors.array(),
+          auth: auth,
+          admin: adminCheck,
+        });
     }
     const { fullname, username, password } = req.body;
     const { salt, hash } = passwordFunc.generatePass(password);
