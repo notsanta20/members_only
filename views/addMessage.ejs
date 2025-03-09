@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/common.css" />
+    <link rel="stylesheet" href="/styles/addMessage.css" />
+    <title>Home</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <%- include(`partials/header.ejs`, {auth: auth, admin: admin})%>
+      <div class="dynamic-content">
+        <h2>Add Message</h2>
+        <%- include(`partials/addPostError.ejs`)%>
+        <form action="/addMessage" method="post">
+          <div>
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title" required />
+          </div>
+          <div>
+            <label for="message">Message</label>
+            <textarea name="message" id="message" rows="5" cols="25"></textarea>
+          </div>
+          <button>Add Message</button>
+        </form>
+      </div>
+      <%- include(`partials/footer.ejs`)%>
+    </div>
+  </body>
+</html>

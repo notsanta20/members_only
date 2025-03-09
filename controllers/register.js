@@ -4,12 +4,17 @@ const passwordFunc = require(`../config/password`);
 
 const validate = [
   body(`fullname`, `Fullname should not be empty`).not().isEmpty(),
-  body(`fullname`, `Fullname should contain only alphabets`).trim().isAlpha(),
+  body(`fullname`, `Fullname should contain only alphabets`)
+    .trim()
+    .isAlpha()
+    .escape(),
   body(`username`, `Username should not be empty`).not().isEmpty(),
-  body(`username`, `username should be between 3-10 characters`).isLength({
-    min: 3,
-    max: 10,
-  }),
+  body(`username`, `username should be between 3-10 characters`)
+    .isLength({
+      min: 3,
+      max: 10,
+    })
+    .escape(),
   body(`password`, `Password should not be empty`).not().isEmpty(),
   body(`password`, `Password should be at least 8 characters`).isLength({
     min: 8,
@@ -23,13 +28,11 @@ const register = [
     const adminCheck = "user" in req ? req.user.admin : false;
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      return res
-        .status(400)
-        .render(`register`, {
-          error: errors.array(),
-          auth: auth,
-          admin: adminCheck,
-        });
+      return res.status(400).render(`register`, {
+        error: errors.array(),
+        auth: auth,
+        admin: adminCheck,
+      });
     }
     const { fullname, username, password } = req.body;
     const { salt, hash } = passwordFunc.generatePass(password);

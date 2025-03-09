@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/common.css" />
+    <link rel="stylesheet" href="/styles/membersOnly.css" />
+    <title>Home</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <%- include(`partials/header.ejs`, {auth: auth, admin: admin})%>
+      <div class="posts">
+        <h2>Recent Posts</h2>
+        <a href="/addMessage" class="add">Add New Message</a>
+        <ul>
+          <%posts.forEach(p=>{%>
+          <li class="card-container">
+            <div class="card">
+              <div class="card-title">
+                <div><%= p.title%></div>
+                <div>
+                  <%= p.username%>
+                  <span class="gray">posted at <%= p.time%></span>
+                </div>
+              </div>
+              <div class="card-message"><%= p.message%></div>
+            </div>
+            <%if(admin){%>
+            <a href="/delete/<%= p.id%>" class="delete">Delete</a>
+            <%}%>
+          </li>
+          <%})%>
+        </ul>
+      </div>
+      <%- include(`partials/footer.ejs`)%>
+    </div>
+  </body>
+</html>

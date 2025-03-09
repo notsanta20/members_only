@@ -117,3 +117,19 @@ form button:hover {
   font-family: "Newsreader";
   font-weight: 500;
 }
+
+.errors {
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+.errors ul {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.errors li {
+  list-style: none;
+  color: rgb(209, 48, 48);
+}

@@ -1,0 +1,71 @@
+.posts {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.posts h2 {
+  font-family: "Newsreader";
+  font-weight: 300;
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 30px;
+}
+
+.add {
+  background-color: rgb(37, 37, 37);
+  border-radius: 10px;
+  padding: 20px 50px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+li {
+  list-style: none;
+}
+
+.card-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card {
+  background-color: rgb(37, 37, 37);
+  padding: 10px 20px;
+  border-radius: 10px;
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  padding-bottom: 10px;
+  display: flex;
+}
+
+.card-title div:first-child {
+  flex: 1;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.card-message {
+  color: rgb(195, 195, 195);
+}
+
+.gray {
+  color: rgb(106, 106, 106);
+  padding: 0px 5px;
+}
+
+.delete {
+  padding: 15px;
+}

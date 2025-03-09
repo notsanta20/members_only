@@ -1,0 +1,21 @@
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+input {
+  font-size: 1rem;
+}
+
+textarea {
+  color: black;
+  padding: 15px 10px;
+  font-size: 1rem;
+  font-weight: 300;
+}
