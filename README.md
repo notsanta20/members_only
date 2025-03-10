@@ -1,9 +1,9 @@
 <h3 align="center">Members Only Forum</h3>
 
   <p align="center">
-    Simple Members only forum with the ability to register and login.  
+    Simple Members only forum with the ability to register and login using PassportJS authentication.  
     <br />
-    <a href="" target="_blank">Live Demo</a>
+    <a href="https://members-only-29to.onrender.com" target="_blank">Live Demo</a>
   </p>
 </div>
 <br>
@@ -13,7 +13,7 @@
 ### Preview
 
 <div align="center">
- <img src="">
+ <img src="./public/preview.png">
 </div>
 
 ### Built With
