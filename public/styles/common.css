@@ -121,6 +121,7 @@ form button:hover {
 .errors {
   padding-bottom: 30px;
   text-align: center;
+  color: rgb(209, 48, 48);
 }
 
 .errors ul {

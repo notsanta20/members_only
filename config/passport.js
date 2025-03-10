@@ -13,11 +13,11 @@ const verifyCallback = async (username, password, done) => {
       return done(null, false, { message: `Incorrect Username` });
     }
     const match = passwordFunc.validatePassword(password, user.hash, user.salt);
-
     if (!match) {
       return done(null, false, { message: `Incorrect Password` });
+    } else {
+      return done(null, user);
     }
-    return done(null, user);
   } catch (err) {
     return done(err);
   }

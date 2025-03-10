@@ -20,6 +20,7 @@ router.post(
   passport.authenticate(`local`, {
     successRedirect: "/members-only",
     failureRedirect: "/log-in",
+    failureMessage: true,
   })
 );
 router.get(`/register`, registerForm);

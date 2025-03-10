@@ -4,7 +4,9 @@ function login(req, res) {
   if (auth) {
     res.redirect(`members-only`);
   } else {
-    res.render(`login`, { auth: auth, admin: admin });
+    const error = req.session.messages[0];
+    req.session.messages = [];
+    res.render(`login`, { auth: auth, admin: admin, error: error });
   }
 }
 
