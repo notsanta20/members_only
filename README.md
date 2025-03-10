@@ -18,7 +18,7 @@
 
 ### Built With
 
-[![My Skills](https://skillicons.dev/icons?i=nodejs,html,css)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=nodejs,postgres,html,css)](https://skillicons.dev)
 
 <!-- ACKNOWLEDGMENTS -->
 
